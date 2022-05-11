@@ -1,1 +1,1 @@
-demo: https://vercel.com/nasirhaidari/fullstack-test-front
+demo: https://fullstack-test-front.vercel.app/
