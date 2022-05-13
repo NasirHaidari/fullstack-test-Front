@@ -16,7 +16,7 @@ window.addEventListener('load', function () {
   window.addEventListener('offline', updateOnlineStatus)
 })
 // fetching data from the api
-fetch(localhostUrl)
+fetch(url)
   .then((res) => res.json())
   .then((data) => {
     data.list.forEach((image) => {
