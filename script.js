@@ -1,10 +1,22 @@
+const localhostUrl = `http://localhost:5000/api/v1/my-gallery`
 const url = `https://back-end-test-1.herokuapp.com/api/v1/my-gallery`
-
 const errElement = document.querySelector('.err')
 //  loading element
 const loader = document.querySelector('.loaderText')
+
+//offline mode
+window.addEventListener('load', function () {
+  function updateOnlineStatus(event) {
+    navigator.onLine
+      ? alert('you are online now')
+      : document.querySelector('.wifi').setAttribute('style', 'display: block')
+  }
+
+  window.addEventListener('online', updateOnlineStatus)
+  window.addEventListener('offline', updateOnlineStatus)
+})
 // fetching data from the api
-fetch(url)
+fetch(localhostUrl)
   .then((res) => res.json())
   .then((data) => {
     data.list.forEach((image) => {
